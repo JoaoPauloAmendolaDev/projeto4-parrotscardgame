@@ -1,0 +1,66 @@
+*{
+  box-sizing: border-box;  
+}
+p{
+  font-family: 'Roboto';
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 65px;
+}
+.Topo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 150px;
+  background-color: #EEF9BF;
+}
+.Topo p{
+  color: #75B79E;
+}
+.Conteiner{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #EEF9BF;
+  height:900px;
+  width: 100%;
+  padding: 0 400px;
+}
+.Cartas{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  height:fit-content;
+  padding-left: 45px;
+}
+.Papagaio{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 146px;
+  width: 117px;
+  margin: 34px 34px;
+  background-color: #A7E9AF;
+  border-radius: 10px;
+}
+.Papagaio img{
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Escondido{
+  display: none;
+}
+.TamanhoPapagaio{
+  height: 100px;
+  width: 100px;
+}
+.Gif1, .Gif2, .Gif3, .Gif4, .Gif5, .Gif6, .Gif7{
+  width: 100px;
+  height: 100px;
+}
