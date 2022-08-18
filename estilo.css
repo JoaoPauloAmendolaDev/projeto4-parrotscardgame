@@ -25,13 +25,13 @@ p{
   background-color: #EEF9BF;
   height:900px;
   width: 100%;
-  padding: 0 400px;
+  padding: 0 200px;
 }
 .Cartas{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  width: 100%;
+  width: 700px;
   height:fit-content;
   padding-left: 45px;
 }
@@ -42,7 +42,7 @@ p{
   align-items: center;
   height: 146px;
   width: 117px;
-  margin: 34px 34px;
+  margin: 20px 20px;
   background-color: #A7E9AF;
   border-radius: 10px;
 }
@@ -66,4 +66,33 @@ p{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.card {
+  width: 116px;
+  height: 146px;
+}
+
+.face {
+  height: 146px;
+  width: 116px;
+  background-color: #A7E9AF;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  transition: all .5s;
+  transform-style: preserve-3d;
+}
+
+.back-face {
+  transform: rotateY(180deg);
+}
+
+.clicar-back-face {
+  transform: rotateY(0deg);
+}
+
+.front-face {
+  transform: rotateY(-180deg);
 }
