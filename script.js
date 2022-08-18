@@ -24,17 +24,25 @@ function comparador() {
 }
 
 while (contadorDeEscolha < (pergunta/2)){
-    console.log('123123')
+    console.log('Passei aqui também')
     listaEscolhida.push(lista[contadorDeEscolha])
     contadorDeEscolha+= 1
 }
-listaEscolhida.sort(comparador) //PARA SORTEAR O ARRAY DE CARTAS ESCOLHIDAS
+listaFinal = listaEscolhida.concat(listaEscolhida)
+listaFinal.sort(comparador) //PARA SORTEAR O ARRAY DE CARTAS ESCOLHIDAS
 
 while (contadorDeCartas < pergunta){
-    Conteiner.innerHTML = (Conteiner.innerHTML + '<div class="Papagaio" onclick="virarCarta(this)"><img src="./imagens/front.png" alt="papagaio_Comum"></div>')
+    console.log('Passei Aqui')
+    Conteiner.innerHTML += (`<div class="Papagaio" onclick="virarCarta(this)">`+listaFinal[contadorDeCartas].outerHTML+`<div class="fotoPapagaioComum"><img class="papagaioComum tamanhoPapagaioComum"src="./imagens/front.png" alt="papagaio_Comum"></div></div>`)
     contadorDeCartas += 1
 }
-
-virarCarta(gif-da-carta){
-    
+function virarCarta(carta){
+    let papagaio = carta //ESSA É A DIV TODA DA CARTA
+    let papagaio_Comum = papagaio.children[1] //ESSA É A DIV QUE FICA EM VOLTA DA IMAGEM
+    let papagaio_Comum_Foto = papagaio_Comum.children[0] //ESSA É A IMAGEM DO PAPAGAIO COMUM
+    let papagaioGif = papagaio.children[0] //ESSA É A DIV DO GIF
+    console.log(papagaioGif)
+    papagaio_Comum_Foto.classList.add("Escondido")
+    papagaioGif.classList.remove("Escondido")
+    console.log("passei aqui de novo")
 }

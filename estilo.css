@@ -46,15 +46,8 @@ p{
   background-color: #A7E9AF;
   border-radius: 10px;
 }
-.Papagaio img{
-  height: 100px;
-  width: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.Escondido{
-  display: none;
+.Escondido { 
+  display: none !important;
 }
 .TamanhoPapagaio{
   height: 100px;
@@ -63,4 +56,14 @@ p{
 .Gif1, .Gif2, .Gif3, .Gif4, .Gif5, .Gif6, .Gif7{
   width: 100px;
   height: 100px;
+}
+.fotoPapagaioComum{
+  display: initial;
+}
+.tamanhoPapagaioComum{
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
