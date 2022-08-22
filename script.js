@@ -18,9 +18,11 @@ let contadorDeDivs = 0
 let contador_vitoria = 0
 let id_carta1 = 0
 let id_carta2 = 0
+let teste_final = 0
 let lista= [gif1 , gif2 , gif3 , gif4 , gif5 , gif6 , gif7] //ESSA É A LISTA COM TODAS AS IMAGENS
 let listaEscolhida = [] //ESSA É A LISTA COM A QUANTIDADE DE IMAGENS QUE O USUÁRIO ESCOLHEU
 let listaDeEscolhas = []
+
 
 
 while ((pergunta < 4) || (pergunta > 14) || (pergunta % 2 != 0)){
@@ -42,7 +44,7 @@ listaFinal.sort(comparador) //PARA SORTEAR O ARRAY DE CARTAS ESCOLHIDAS
 
 while (contadorDeCartas < pergunta){
     console.log('Passei Aqui')
-    Conteiner.innerHTML += (`<div class="Papagaio" id='${contadorDeDivs}' onclick=SelecionarCarta(this,${contadorDeDivs})>${listaFinal[contadorDeCartas].outerHTML}<div class="fotoPapagaioComum"><img class="papagaioComum tamanhoPapagaioComum"src="./imagens/front.png" alt="papagaio_Comum"></div></div>`)
+    Conteiner.innerHTML += (`<div class="Papagaio" onclick=SelecionarCarta(this,${contadorDeDivs})>${listaFinal[contadorDeCartas].outerHTML}<div class="fotoPapagaioComum NaoEscondido"><img class="papagaioComum tamanhoPapagaioComum"src="./imagens/front.png" alt="papagaio_Comum"></div></div>`)
     contadorDeCartas += 1
     contadorDeDivs += 1
     console.log
@@ -62,13 +64,17 @@ function SegundaCarta(carta_gif, carta_imagem, id_da_carta){
 function VirarCarta(carta_gif, carta_imagem){
     carta_gif.classList.remove('Escondido')
     carta_imagem.classList.add('Escondido')
+    carta_imagem.classList.remove('NaoEscondido')
+
     console.log('AQUI EU VIREI A CARTA')
 }
 function DesvirarCarta(carta_gif, carta_imagem){
     carta_gif.classList.add('Escondido')
     carta_imagem.classList.remove('Escondido')
+    carta_imagem.classList.add('NaoEscondido')
     carta_gif1.classList.add('Escondido')
     carta_imagem1.classList.remove('Escondido')
+
     
 }
 function SelecionarCarta(carta, id){
@@ -87,9 +93,18 @@ function SelecionarCarta(carta, id){
         SegundaCarta(carta_papagaio_gif, carta_papagaio_imagem, carta_numero)
     }
     contadorParImpar+= 1
+    contador_vitoria += 1
+    teste_final = document.querySelector('.NaoEscondido')
+    console.log(teste_final)
+    setTimeout(() => {
+        if (teste_final == null){
+            alert(`Parabéns, você venceu em ${contador_vitoria} jogadas!`)
+        }
+    }, 1000);
+
 }
 
-function CompararCartas(carta_gif, carta_imagem, id_da_carta){
+function CompararCartas(carta_gif, carta_imagem){
     let carta1 = listaDeEscolhas[(listaDeEscolhas.length - 2)]
     let carta2 = listaDeEscolhas[(listaDeEscolhas.length - 1)]
     if (id_carta1 === id_carta2){
@@ -100,7 +115,7 @@ function CompararCartas(carta_gif, carta_imagem, id_da_carta){
     }
     if (carta2 == carta1){
         console.log('SÃO IGUAIS!')
-        contador_vitoria += 1
+
     }
     else{
         VirarCarta(carta_gif, carta_imagem)
@@ -111,6 +126,6 @@ function CompararCartas(carta_gif, carta_imagem, id_da_carta){
 
     }
 }
-if (contador_vitoria == (pergunta / 2)){
-
+if (teste_final == null){
+    prompt(`'Parabéns, você venceu em ${contador_vitoria} jogadas!`)
 }

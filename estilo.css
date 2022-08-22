@@ -96,3 +96,34 @@ p{
 .front-face {
   transform: rotateY(-180deg);
 }
+@media(max-width:335px ){
+  .Conteiner{
+    height: fit-content;
+  }
+
+  .Topo{
+    padding-top: 40px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .TextoTopo{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 42px;
+    font-size: 36px;
+    font-weight: 700;
+  }
+  .TextoTopo p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .Cartas{
+    padding: 0 0;
+  }
+}
